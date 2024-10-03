@@ -21,12 +21,12 @@ const Content = () => {
     ]);
     const [newsList, setNewsList] = useState([]);
 
-    useEffect(() => {
-        if (location.state && location.state.query) {
-            setInputText(location.state.query);
-            setSearchQuery(location.state.query);
-        }
-    }, [location]);
+    // useEffect(() => {
+    //     if (location.state && location.state.query) {
+    //         setInputText(location.state.query);
+    //         setSearchQuery(location.state.query);
+    //     }
+    // }, [location]);
 
     useEffect(() => {
         // search filter for newsList
