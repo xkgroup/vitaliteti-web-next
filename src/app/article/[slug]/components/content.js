@@ -72,19 +72,6 @@ export default async function Article({params}) {
 
     return (
         <div className="section">
-            <Head>
-                <title>{article.title}</title>
-                <meta name="description" content={article.title}/>
-                <meta property="og:title" content={article.title}/>
-                <meta property="og:description" content={article.title}/>
-                <meta property="og:image" content={article.image}/>
-                {/*<meta property="og:url" content={window.location.href}/>*/}
-                <meta name="twitter:card" content="summary_large_image"/>
-                <meta name="twitter:title" content={article.title}/>
-                <meta name="twitter:description" content={article.title}/>
-                <meta name="twitter:image" content={article.image}/>
-            </Head>
-
             <div className="section-body-1">
                 <button
                     className="article-header-button"
