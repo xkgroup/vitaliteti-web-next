@@ -1,7 +1,7 @@
 'use client'
 import React, { useEffect, useState, useMemo } from "react";
 import Banner from "../assets/SectionOneBanner.svg";
-import Certified from "../assets/SectionOneCertified.jpg";
+import Certified from "../assets/SectionOneCertified.png";
 import Heart from "../assets/SectionOneHeart.png";
 import Doctor from "../assets/SectionOneDoctor.png";
 import GreenDot from "./../assets/SectionOneCenterGreenDot.svg";
@@ -218,7 +218,7 @@ const SectionOne = () => {
           <Image src={Banner} alt="Banner" />
           <div className="section-one-part-2-right-categories">
             <h1 className="section-one-part-2-right-title">
-              Temat me te kerkuara
+              Temat më të kërkuara
             </h1>
             <div className="section-one-part-2-right-buttons">
               <button

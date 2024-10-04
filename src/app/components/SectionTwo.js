@@ -236,7 +236,7 @@ const SectionTwo = () => {
   return (
     <div className="section-two">
       <div className="section-two-header">
-        <h1 className="section-two-header-title">Artikujt kryesor</h1>
+        <h1 className="section-two-header-title">Artikujt kryesorë</h1>
         <div className="section-two-header-link">
           <Link href={''} className="section-two-header-link-text">
             SHIKO TË GJITHA “LAJMET KRYESORE”

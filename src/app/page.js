@@ -5,9 +5,12 @@ import HeaderMobile from "./components/HeaderMobile";
 import SectionTwo from "./components/SectionTwo";
 import SectionThree from "./components/SectionThree";
 import Footer from "./components/Footer";
+import ThemeContextProvider from "./components/themeContext";
+import Head from "next/head";
 
 const Homepage = () => {
   return (
+    <ThemeContextProvider>
       <div className="homepage-container">
         <div className="HomepageMobileHeader">
           <HeaderMobile />
@@ -20,6 +23,7 @@ const Homepage = () => {
         <SectionThree />
         <Footer />
       </div>
+    </ThemeContextProvider>
   );
 };
 
