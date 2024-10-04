@@ -1,7 +1,7 @@
 'use client'
 import React, { useEffect, useState, useMemo } from "react";
 import Banner from "../assets/SectionOneBanner.svg";
-import Certified from "../assets/SectionOneCertified.jpg";
+import Certified from "../assets/SectionOneCertified.png";
 import Heart from "../assets/SectionOneHeart.png";
 import Doctor from "../assets/SectionOneDoctor.png";
 import GreenDot from "./../assets/SectionOneCenterGreenDot.svg";

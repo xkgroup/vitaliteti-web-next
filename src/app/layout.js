@@ -1,5 +1,5 @@
 import "./globals.css";
-import HeaderImage from './img.png'
+import HeaderImage from './favicon.ico'
 
 export const metadata = {
     title: "Vitaliteti",

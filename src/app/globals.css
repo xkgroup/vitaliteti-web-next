@@ -148,7 +148,7 @@ html[data-theme="dark"] {
   }
 }
 .header {
-  background-color: #f6f6f6;
+  background-color: white;
   height: 90px;
   margin: 0;
   padding-inline: 100px;
@@ -1288,7 +1288,8 @@ body,
 }
 
 .search-section-one-result-text-input {
-  font-weight: 700;
+  font-weight: 500;
+  font-family: "Clash Grotesk";
   color: var(--color-text);
 }
 .search-section-news-card {
