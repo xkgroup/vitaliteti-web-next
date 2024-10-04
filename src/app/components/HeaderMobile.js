@@ -56,33 +56,33 @@ const HeaderMobile = () => {
         </div>
         {isDropdownOpen && (
             <div className="header-mobile-dropdown" ref={dropdownRef}>
-              <Link href="/rubrikat/keshilla-mjekesore" passHref>
-                <a className="mobile-header-list-text" onClick={() => window.scrollTo(0, 0)}>
+              <Link href="/rubrikat/keshilla-mjekesore" passHref className="mobile-header-list-link">
+                <p className="mobile-header-list-text" onClick={() => window.scrollTo(0, 0)}>
                   Keshilla mjekesore
-                </a>
+                </p>
               </Link>
-              <Link href="/rubrikat/ushqimi-dhe-dieta" passHref>
-                <a className="mobile-header-list-text" onClick={() => window.scrollTo(0, 0)}>
+              <Link href="/rubrikat/ushqimi-dhe-dieta" passHref className="mobile-header-list-link">
+                <p className="mobile-header-list-text" onClick={() => window.scrollTo(0, 0)}>
                   Ushqimi dhe dieta
-                </a>
+                </p>
               </Link>
-              <Link href="/rubrikat/psikologji" passHref>
-                <a className="mobile-header-list-text" onClick={() => window.scrollTo(0, 0)}>
+              <Link href="/rubrikat/psikologji" passHref className="mobile-header-list-link">
+                <p className="mobile-header-list-text" onClick={() => window.scrollTo(0, 0)}>
                   Psikologji
-                </a>
+                </p>
               </Link>
-              <Link href="/rubrikat/shendetesi-lajme" passHref>
-                <a className="mobile-header-list-text">Shendetesi & lajme</a>
+              <Link href="/rubrikat/shendetesi-lajme" passHref className="mobile-header-list-link">
+                <p className="mobile-header-list-text">Shendetesi & lajme</p>
               </Link>
-              <Link href="/rubrikat/temat-javore" passHref>
-                <a className="mobile-header-list-text" onClick={() => window.scrollTo(0, 0)}>
+              <Link href="/rubrikat/temat-javore" passHref className="mobile-header-list-link">
+                <p className="mobile-header-list-text" onClick={() => window.scrollTo(0, 0)}>
                   Temat javore
-                </a>
+                </p>
               </Link>
-              <Link href="/rubrikat/te-tjerat" passHref>
-                <a className="mobile-header-list-text" onClick={() => window.scrollTo(0, 0)}>
+              <Link href="/rubrikat/te-tjerat" passHref className="mobile-header-list-link">
+                <p className="mobile-header-list-text" onClick={() => window.scrollTo(0, 0)}>
                   Te tjerat
-                </a>
+                </p>
               </Link>
               <div className="mobile-header-list-text">
                 <ThemeToggleButton />

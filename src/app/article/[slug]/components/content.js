@@ -7,7 +7,7 @@ import NewsFourImageOne from "../../../assets/SectionTwoNewsTematOne.svg";
 import NewsFourImageTwo from "../../../assets/SectionTwoNewsTematTwo.svg";
 import NewsFourImageThree from "../../../assets/SectionTwoNewsTematThree.svg";
 import NewsFourImageFour from "../../../assets/SectionTwoNewsTematFour.svg";
-import Head from "next/head";
+import CopyButton from '../components/copyButton'
 import Link from "next/link";
 import Image from "next/image";
 import ContentButton from "@/app/article/[slug]/components/contentButton";
@@ -107,9 +107,7 @@ export default async function Article({params}) {
                         <Link href={''}>
                             <Image src={Twitter} alt="Twitter"/>
                         </Link>
-                        {/*<div style={{cursor: "pointer"}} onClick={handleCopyLink}>*/}
-                        {/*    <Image src={CopyLink} alt="Copy Link"/>*/}
-                        {/*</div>*/}
+                        <CopyButton />
                     </div>
                 </div>
 

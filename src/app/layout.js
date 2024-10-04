@@ -1,9 +1,10 @@
 import "./globals.css";
+import HeaderImage from './img.png'
 
 export const metadata = {
     title: "Vitaliteti",
     description: "Vitaliteti",
-    favicon:'./img.png'
+    favicon: {HeaderImage}
 };
 
 export default function RootLayout({children}) {

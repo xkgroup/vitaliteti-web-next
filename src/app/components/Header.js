@@ -88,7 +88,7 @@ const Header = () => {
         >
           Te tjerat
         </Link>
-        <ThemeToggleButton lassName="header-list-text" />
+        <ThemeToggleButton className="header-list-text" />
         <button className="header-search-button" onClick={handleSearchClick}>
           <Image src={Search} className="header-search-img" alt="Search" />
         </button>

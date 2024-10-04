@@ -218,7 +218,7 @@ const SectionOne = () => {
           <Image src={Banner} alt="Banner" />
           <div className="section-one-part-2-right-categories">
             <h1 className="section-one-part-2-right-title">
-              Temat me te kerkuara
+              Temat më të kërkuara
             </h1>
             <div className="section-one-part-2-right-buttons">
               <button

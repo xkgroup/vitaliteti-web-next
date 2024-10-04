@@ -7,11 +7,15 @@ export const ThemeContext = React.createContext({
 });
 
 const ThemeContextProvider = (props) => {
-  const [currentTheme, setCurrentTheme] = useState(
-    !!!window.localStorage.getItem("theme")
-      ? "light"
-      : window.localStorage.getItem("theme")
-  );
+  const [currentTheme, setCurrentTheme] = useState("light");
+
+useEffect(() => {
+  const savedTheme = window.localStorage.getItem("theme");
+  if (savedTheme) {
+    setCurrentTheme(savedTheme);
+  }
+}, []);
+
 
   const themeSwitchHandler = (themeType) => {
     setCurrentTheme(themeType);
