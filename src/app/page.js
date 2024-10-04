@@ -49,7 +49,7 @@ const Homepage = () => {
         <SectionThree />
         <Footer />
       </div>
-      </ThemeContextProvider>
+    </ThemeContextProvider>
   );
 };
 
