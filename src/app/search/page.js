@@ -11,6 +11,21 @@ const Search = () => {
     <ThemeContextProvider>
       <Head>
         <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-PC7G83EB7E"
+        ></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-PC7G83EB7E');
+            `,
+          }}
+        />
+
+        <script
           dangerouslySetInnerHTML={{
             __html: `
               !function(f,b,e,v,n,t,s)
