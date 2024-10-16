@@ -54,7 +54,7 @@ const Content = () => {
             <Image src={NotFound} alt="NotFound" />
           </div>
           <p className="search-section-two-text">
-            Duket se nuk mund të gjejmë asgjë për "{searchQuery}".
+            Duket se nuk mund të gjejmë asgjë për {searchQuery}.
             <br />
             <p className="search-random">
               Shihni nëse mund ta gjeni në <Link href="/" className="search-section-link-text">Homepage</Link> ose
