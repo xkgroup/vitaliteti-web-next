@@ -1,8 +1,8 @@
-'use client'
+"use client";
 import React, { useEffect, useState, useRef } from "react";
 import Arrow from "../assets/SectionTwoArrow.png";
 import MainNewsTime from "../assets/SectionTwoMainNewsTime.png";
-import {useRouter} from "next/navigation";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -50,9 +50,9 @@ const SectionTwo = () => {
         }
       );
       const data = await response.json();
-      return data.data.filter(
-        (article) => article.attributes.subcategory === "1"
-      ).slice(0, 3); // Limit to 3 articles
+      return data.data
+        .filter((article) => article.attributes.subcategory === "1")
+        .slice(0, 3); // Limit to 3 articles
     } catch (error) {
       console.error("Error fetching main news:", error);
       return [];
@@ -238,7 +238,7 @@ const SectionTwo = () => {
       <div className="section-two-header">
         <h1 className="section-two-header-title">Artikujt kryesorë</h1>
         <div className="section-two-header-link">
-          <Link href={''} className="section-two-header-link-text">
+          <Link href={""} className="section-two-header-link-text">
             SHIKO TË GJITHA “LAJMET KRYESORE”
           </Link>
           <Image src={Arrow} />

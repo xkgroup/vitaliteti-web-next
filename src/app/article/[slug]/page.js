@@ -46,7 +46,10 @@ const Article = ({ params }) => {
     <ThemeContextProvider>
       <Head>
         {/* Google Tag Manager */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-PC7G83EB7E"></script>
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-PC7G83EB7E"
+        ></script>
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -89,7 +92,7 @@ const Article = ({ params }) => {
           <HeaderMobile />
         </div>
         <div className="HomepageHeader">
-          <Header />{" "}
+          <Header />
         </div>
         <Content params={params} />
         <Footer />

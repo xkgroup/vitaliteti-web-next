@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import React, { useEffect, useState } from "react";
 
 export const ThemeContext = React.createContext({
@@ -9,13 +9,12 @@ export const ThemeContext = React.createContext({
 const ThemeContextProvider = (props) => {
   const [currentTheme, setCurrentTheme] = useState("light");
 
-useEffect(() => {
-  const savedTheme = window.localStorage.getItem("theme");
-  if (savedTheme) {
-    setCurrentTheme(savedTheme);
-  }
-}, []);
-
+  useEffect(() => {
+    const savedTheme = window.localStorage.getItem("theme");
+    if (savedTheme) {
+      setCurrentTheme(savedTheme);
+    }
+  }, []);
 
   const themeSwitchHandler = (themeType) => {
     setCurrentTheme(themeType);

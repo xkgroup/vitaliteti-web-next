@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import React, { useContext } from "react";
 import Logo from "../assets/Vitaliteti-logo.svg";
 import Search from "./../assets/HeaderSearch.png";
@@ -10,7 +10,7 @@ import { ThemeContext } from "../components/themeContext"; // Import the theme c
 
 const Header = () => {
   const router = useRouter();
-  
+
   // Access the current theme from the ThemeContext
   const { currentTheme } = useContext(ThemeContext);
 
@@ -57,40 +57,58 @@ const Header = () => {
         />
       </div>
       <div className="header-list">
-        <Link href="/rubrikat/keshilla-mjekesore" className="header-list-text"
+        <Link
+          href="/rubrikat/keshilla-mjekesore"
+          className="header-list-text"
           style={{
-            color: currentTheme === "light" ? "#333" : "#f0f0f0", 
-          }}>
+            color: currentTheme === "light" ? "#333" : "#f0f0f0",
+          }}
+        >
           Keshilla mjekesore
         </Link>
-        <Link href="/rubrikat/ushqimi-dhe-dieta" className="header-list-text"
+        <Link
+          href="/rubrikat/ushqimi-dhe-dieta"
+          className="header-list-text"
           style={{
             color: currentTheme === "light" ? "#333" : "#f0f0f0",
-          }}>
+          }}
+        >
           Ushqimi dhe dieta
         </Link>
-        <Link href="/rubrikat/psikologji" className="header-list-text"
+        <Link
+          href="/rubrikat/psikologji"
+          className="header-list-text"
           style={{
             color: currentTheme === "light" ? "#333" : "#f0f0f0",
-          }}>
+          }}
+        >
           Psikologji
         </Link>
-        <Link href="/rubrikat/shendetesi-lajme" className="header-list-text"
+        <Link
+          href="/rubrikat/shendetesi-lajme"
+          className="header-list-text"
           style={{
             color: currentTheme === "light" ? "#333" : "#f0f0f0",
-          }}>
+          }}
+        >
           Shendetesi & lajme
         </Link>
-        <Link href="/rubrikat/temat-javore" className="header-list-text"
+        <Link
+          href="/rubrikat/temat-javore"
+          className="header-list-text"
           style={{
             color: currentTheme === "light" ? "#333" : "#f0f0f0",
-          }}>
+          }}
+        >
           Temat javore
         </Link>
-        <Link href="/rubrikat/te-tjera" className="header-list-text"
+        <Link
+          href="/rubrikat/te-tjera"
+          className="header-list-text"
           style={{
             color: currentTheme === "light" ? "#333" : "#f0f0f0",
-          }}>
+          }}
+        >
           Te tjerat
         </Link>
         <ThemeToggleButton className="header-list-text" />

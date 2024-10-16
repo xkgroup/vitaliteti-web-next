@@ -1,10 +1,10 @@
-'use client'
+"use client";
 import React, { useEffect, useState } from "react";
 import Arrow from "./../assets/SectionTwoArrow.png";
 import Reklama from "../assets/SectionThreeReklama.svg";
 import MainNewsTime from "../assets/SectionTwoMainNewsTime.png";
 import Link from "next/link";
-import {useRouter} from "next/navigation";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 
 const SectionThree = () => {
@@ -106,16 +106,25 @@ const SectionThree = () => {
       <div className="section-three-header">
         <h1 className="section-three-header-title">Te tjera</h1>
         <div className="section-three-header-link">
-          <Link href="/rubrikat/te-tjera" className="section-three-header-link-text">
+          <Link
+            href="/rubrikat/te-tjera"
+            className="section-three-header-link-text"
+          >
             SHIKO TË GJITHA “TE TJERA”
           </Link>
           <Image src={Arrow} alt="Arrow" />
         </div>
       </div>
       <div className="section-three-body">
-        <div className="section-three-news">{renderArticles(articlesWithoutCategory)}</div>
+        <div className="section-three-news">
+          {renderArticles(articlesWithoutCategory)}
+        </div>
         <div>
-          <Image src={Reklama} className="section-three-reklama" alt="Reklama" />
+          <Image
+            src={Reklama}
+            className="section-three-reklama"
+            alt="Reklama"
+          />
         </div>
       </div>
     </div>

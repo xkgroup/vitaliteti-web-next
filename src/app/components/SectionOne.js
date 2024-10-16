@@ -1,11 +1,11 @@
-'use client'
+"use client";
 import React, { useEffect, useState, useMemo } from "react";
 import Banner from "../assets/SectionOneBanner.svg";
 import Certified from "../assets/SectionOneCertified.png";
 import Heart from "../assets/SectionOneHeart.png";
 import Doctor from "../assets/SectionOneDoctor.png";
 import GreenDot from "./../assets/SectionOneCenterGreenDot.svg";
-import {useRouter} from "next/navigation";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 
 const SectionOne = () => {
@@ -19,7 +19,7 @@ const SectionOne = () => {
     const fetchArticles = async () => {
       try {
         const response = await fetch(
-          "https://cms.vitaliteti.com/api/articles?populate=image",
+          "https://cms.vitaliteti.com/api/articles?populate=image&pagination[pageSize]=500",
           {
             headers: {
               Authorization:
@@ -44,9 +44,12 @@ const SectionOne = () => {
   // UseMemo for optimized sorting of articles
   const sortedArticles = useMemo(() => {
     if (articles.length > 0) {
-      return articles.slice().sort(
-        (a, b) => new Date(b.attributes.createdAt) - new Date(a.attributes.createdAt)
-      );
+      return articles
+        .slice()
+        .sort(
+          (a, b) =>
+            new Date(b.attributes.createdAt) - new Date(a.attributes.createdAt)
+        );
     }
     return [];
   }, [articles]);
@@ -59,15 +62,21 @@ const SectionOne = () => {
       // Get the latest article
       const latestArticleData = sortedArticles[0]; // Latest article
       const firstSentence =
-        latestArticleData.attributes.description[0].children[0].text.split(".")[0] + ".";
+        latestArticleData.attributes.description[0].children[0].text.split(
+          "."
+        )[0] + ".";
 
       setLatestArticle({
-        image: baseUrl + latestArticleData.attributes.image.data.attributes.formats.medium.url,
+        image:
+          baseUrl +
+          latestArticleData.attributes.image.data.attributes.formats.medium.url,
         title: latestArticleData.attributes.title,
         category: latestArticleData.attributes.category,
         description: firstSentence,
         fullDescription: latestArticleData.attributes.description,
-        author: latestArticleData.attributes.author ? "Nga " + latestArticleData.attributes.author : null,
+        author: latestArticleData.attributes.author
+          ? "Nga " + latestArticleData.attributes.author
+          : null,
         slug: latestArticleData.attributes.slug,
       });
 

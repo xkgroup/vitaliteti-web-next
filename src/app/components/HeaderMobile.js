@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import { useState, useRef, useContext } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
@@ -14,7 +14,7 @@ const HeaderMobile = () => {
   const [searchText, setSearchText] = useState("");
   const router = useRouter();
   const dropdownRef = useRef(null);
-  
+
   // Access the current theme from the ThemeContext
   const { currentTheme } = useContext(ThemeContext);
 
@@ -73,7 +73,11 @@ const HeaderMobile = () => {
             backgroundColor: currentTheme === "light" ? "#f6f6f6" : "#1c1c1c", // Dropdown background color
           }}
         >
-          <Link href="/rubrikat/keshilla-mjekesore" passHref className="mobile-header-list-link">
+          <Link
+            href="/rubrikat/keshilla-mjekesore"
+            passHref
+            className="mobile-header-list-link"
+          >
             <p
               className="mobile-header-list-text"
               style={{ color: currentTheme === "light" ? "#333" : "#f0f0f0" }}
@@ -82,7 +86,11 @@ const HeaderMobile = () => {
               Keshilla mjekesore
             </p>
           </Link>
-          <Link href="/rubrikat/ushqimi-dhe-dieta" passHref className="mobile-header-list-link">
+          <Link
+            href="/rubrikat/ushqimi-dhe-dieta"
+            passHref
+            className="mobile-header-list-link"
+          >
             <p
               className="mobile-header-list-text"
               style={{ color: currentTheme === "light" ? "#333" : "#f0f0f0" }}
@@ -91,7 +99,11 @@ const HeaderMobile = () => {
               Ushqimi dhe dieta
             </p>
           </Link>
-          <Link href="/rubrikat/psikologji" passHref className="mobile-header-list-link">
+          <Link
+            href="/rubrikat/psikologji"
+            passHref
+            className="mobile-header-list-link"
+          >
             <p
               className="mobile-header-list-text"
               style={{ color: currentTheme === "light" ? "#333" : "#f0f0f0" }}
@@ -100,7 +112,11 @@ const HeaderMobile = () => {
               Psikologji
             </p>
           </Link>
-          <Link href="/rubrikat/shendetesi-lajme" passHref className="mobile-header-list-link">
+          <Link
+            href="/rubrikat/shendetesi-lajme"
+            passHref
+            className="mobile-header-list-link"
+          >
             <p
               className="mobile-header-list-text"
               style={{ color: currentTheme === "light" ? "#333" : "#f0f0f0" }}
@@ -108,7 +124,11 @@ const HeaderMobile = () => {
               Shendetesi & lajme
             </p>
           </Link>
-          <Link href="/rubrikat/temat-javore" passHref className="mobile-header-list-link">
+          <Link
+            href="/rubrikat/temat-javore"
+            passHref
+            className="mobile-header-list-link"
+          >
             <p
               className="mobile-header-list-text"
               style={{ color: currentTheme === "light" ? "#333" : "#f0f0f0" }}
@@ -117,7 +137,11 @@ const HeaderMobile = () => {
               Temat javore
             </p>
           </Link>
-          <Link href="/rubrikat/te-tjerat" passHref className="mobile-header-list-link">
+          <Link
+            href="/rubrikat/te-tjerat"
+            passHref
+            className="mobile-header-list-link"
+          >
             <p
               className="mobile-header-list-text"
               style={{ color: currentTheme === "light" ? "#333" : "#f0f0f0" }}
