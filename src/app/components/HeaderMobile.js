@@ -138,7 +138,7 @@ const HeaderMobile = () => {
             </p>
           </Link>
           <Link
-            href="/rubrikat/te-tjerat"
+            href="/rubrikat/te-tjera"
             passHref
             className="mobile-header-list-link"
           >
