@@ -1264,6 +1264,10 @@ body,
   padding-inline: 50px;
   cursor: pointer;
   transition: all 300ms;
+  @media (max-width: 500px) {
+    width: 100px;
+    padding-inline: 10px;
+  }
 }
 .search-section-one-button:hover {
   transition: all 300ms;
@@ -1484,6 +1488,10 @@ body,
   display: flex;
   flex-direction: column;
   padding-top: 30px;
+  @media (max-width: 500px) {
+    width: 100%;
+    padding-top: 10px;
+  }
 }
 .search-section-two-row {
   display: flex;
@@ -1492,29 +1500,31 @@ body,
   justify-content: center;
   gap: 30px;
 }
-  .search-section-two-text {
-    display: flex;
-    flex-direction: column; 
-    align-items: center;  
-    justify-content: center; 
-    font-family: "Clash Grotesk";
-    font-size: 24px;
-    font-weight: 500;
-    line-height: 36px;
-    text-align: center;
-    margin-bottom: 0;
-  }
-  
+.search-section-two-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Clash Grotesk";
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 36px;
+  text-align: center;
+  margin-bottom: 0;
+  color: var(--color-text);
+}
+
 .search-section-two-row-text {
   font-family: "Clash Grotesk";
   font-size: 36px;
   font-weight: 500;
   line-height: 42px;
+  color: var(--color-text);
 }
 .search-section-link-text {
-  color: #008C8C;
+  color: #008c8c;
 }
-.search-random{
+.search-random {
   margin: 0;
   padding: 0;
 }
