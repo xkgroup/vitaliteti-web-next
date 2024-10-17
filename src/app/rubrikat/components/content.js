@@ -136,7 +136,7 @@ const Rubrikat = ({ params }) => {
         <div className="rubrikat-main">
           {mainArticle && (
             <>
-              <img
+              <Image
                 src={`https://cms.vitaliteti.com${mainArticle.attributes.image?.data?.attributes?.url}`}
                 className="rubrikat-main-image"
                 alt={mainArticle.attributes.title}
@@ -173,7 +173,7 @@ const Rubrikat = ({ params }) => {
         <div className="rubrika-seperation">
           {otherArticles.map((article, index) => (
             <div key={index} className="rubrikat-main-news-card">
-              <img
+              <Image
                 src={`https://cms.vitaliteti.com${article.attributes.image?.data?.attributes?.url}`}
                 className="rubrikat-main-news-image"
                 alt={article.attributes.title}
