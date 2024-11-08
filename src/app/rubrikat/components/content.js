@@ -136,13 +136,19 @@ const Rubrikat = ({ params }) => {
         <div className="rubrikat-main">
           {mainArticle && (
             <>
-              <Image
-                src={`https://cms.vitaliteti.com${mainArticle.attributes.image?.data?.attributes?.url}`}
-                className="rubrikat-main-image"
-                alt={mainArticle.attributes.title}
-                onClick={() => handleArticleClick(mainArticle.attributes.slug)}
-                style={{ cursor: "pointer" }}
-              />
+              <div className="width-height">
+                <Image
+                  src={`https://cms.vitaliteti.com${mainArticle.attributes.image?.data?.attributes?.url}`}
+                  className="rubrikat-main-image"
+                  width={500}
+                  height={500}
+                  alt={mainArticle.attributes.title}
+                  onClick={() =>
+                    handleArticleClick(mainArticle.attributes.slug)
+                  }
+                  style={{ cursor: "pointer" }}
+                />
+              </div>
               <div className="rubrikat-main-information">
                 <h1
                   className="rubrikat-main-information-title"
@@ -173,13 +179,16 @@ const Rubrikat = ({ params }) => {
         <div className="rubrika-seperation">
           {otherArticles.map((article, index) => (
             <div key={index} className="rubrikat-main-news-card">
-              <Image
-                src={`https://cms.vitaliteti.com${article.attributes.image?.data?.attributes?.url}`}
-                className="rubrikat-main-news-image"
-                alt={article.attributes.title}
-                onClick={() => handleArticleClick(article.attributes.slug)}
-                style={{ cursor: "pointer" }}
-              />
+              <div className="height-width-2">
+                <Image
+                  src={`https://cms.vitaliteti.com${article.attributes.image?.data?.attributes?.url}`}
+                  className="rubrikat-main-news-image"
+                  fill
+                  alt={article.attributes.title}
+                  onClick={() => handleArticleClick(article.attributes.slug)}
+                  style={{ cursor: "pointer" }}
+                />
+              </div>
               <div className="rubrikat-main-news-card-information">
                 <div>
                   <h1

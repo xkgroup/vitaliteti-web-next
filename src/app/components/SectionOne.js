@@ -69,7 +69,7 @@ const SectionOne = () => {
       setLatestArticle({
         image:
           baseUrl +
-          latestArticleData.attributes.image.data.attributes.formats.medium.url,
+          latestArticleData.attributes.image.data.attributes.url,
         title: latestArticleData.attributes.title,
         category: latestArticleData.attributes.category,
         description: firstSentence,

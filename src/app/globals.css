@@ -1014,6 +1014,27 @@ body,
     width: 100%;
   }
 }
+.width-height{
+  width: auto;
+  max-width: 80%;
+  height: auto;
+  max-height: 400px;
+  border-radius: 8px;
+  @media (max-width: 500px) {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+.height-width-2{
+  position: relative; /* Required for Next.js Image with fill */ 
+  width: 500px;
+  height: 230px !important;
+  border-radius: 10px;
+  @media (max-width: 500px) {
+    width: 100%;
+    max-width: none;
+  }
+}
 .rubrikat-main-information {
   width: 35%;
   @media (max-width: 500px) {
@@ -1084,13 +1105,7 @@ body,
 }
 
 .rubrikat-main-news-image {
-  width: auto; /* Image takes 35% of the card width */
-  height: 230px;
-  border-radius: 10px;
-  @media (max-width: 500px) {
-    width: 100%;
-    max-width: none;
-  }
+object-fit: cover;
 }
 
 .rubrikat-main-news-card-information {
