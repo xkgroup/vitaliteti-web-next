@@ -34,6 +34,8 @@ const Article = ({ params }) => {
     e.preventDefault();
     setLoading(true); // Start loading
 
+    const selectedPackObject = packs.find((pack) => pack.id === selectedPack);
+
     const formData = new FormData(e.target);
     const formValues = {
       name: formData.get("name"),
@@ -80,6 +82,7 @@ const Article = ({ params }) => {
         {
           product_id: 8065,
           quantity: formValues.selectedPack,
+          total: String(selectedPackObject?.wooPrice || 0),
         },
       ],
     };
@@ -127,23 +130,27 @@ const Article = ({ params }) => {
   const packs = [
     {
       id: 1,
-      name: "Pako 1",
+      name: "Pako Solo",
       price: "35.00€",
+      wooPrice: 35,
       image: "/products/diet-aid/diet-aid-pack-1.webp",
     },
     {
       id: 2,
-      name: "Pako 2",
-      originalPrice: "59.00€",
-      price: "56.00€",
+      name: "Pako Dyshe",
+      originalPrice: "70.00€",
+      price: "63.00€",
+      wooPrice: 63,
       image: "/products/diet-aid/diet-aid-pack-2.webp",
+      sale: "-10% ZBRITJE",
     },
     {
       id: 3,
-      name: "Pako 3",
-      originalPrice: "59.00€",
-
-      price: "49.00€",
+      name: "Pako Treshe",
+      originalPrice: "105.00€",
+      price: "90.00€",
+      sale: "-15% ZBRITJE",
+      wooPrice: 90,
       image: "/products/diet-aid/diet-aid-pack-3.webp",
     },
   ];
@@ -367,14 +374,18 @@ const Article = ({ params }) => {
                     veten time. Diet Aid nuk më ndihmoi vetëm me peshën – më
                     ndihmoi të rifitoj vetëvlerësimin tim.
                   </p>
-                  <img
-                    alt="Bala Diet Aid"
-                    src="/products/diet-aid/diet-aid-pack-1.webp"
-                    style={{
-                      maxWidth: "20em",
-                      textAlign: "center",
-                    }}
-                  />
+                  <div style={{ display: "flex", justifyContent: "center" }}>
+                    <img
+                      alt="Bala Diet Aid"
+                      src="/products/diet-aid/diet-aid-pack-1.webp"
+                      style={{
+                        maxWidth: "20em",
+                        textAlign: "center",
+                        padding: "0 auto",
+                      }}
+                    />
+                  </div>
+
                   <p>
                     Nëse jeni duke luftuar me peshën dhe energjinë tuaj, unë ju
                     rekomandoj me gjithë zemër të provoni Diet Aid. Ky ishte
@@ -438,7 +449,7 @@ const Article = ({ params }) => {
               <img
                 src="/green-tick.webp"
                 alt="green-tick"
-                style={{ width: "5em", height: "5em" }}
+                style={{ width: "4.5em", height: "4.5em" }}
               />
               <p style={{ fontSize: "1.2em", fontWeight: "600" }}>
                 Falemnderit për porosinë tuaj!
@@ -447,7 +458,7 @@ const Article = ({ params }) => {
                 Porosia juaj është pranuar me sukses dhe do të përpunohet së
                 shpejti.
               </p>
-              <hr style={{ color: "#d1d5db" }}></hr>
+              <hr />
               <button
                 style={{
                   border: "none",
@@ -474,18 +485,18 @@ const Article = ({ params }) => {
                     width: "100%",
                     display: "flex",
                     justifyContent: "space-between",
-                    alignItems: "center",
+                    alignItems: "start",
                   }}
                 >
                   <p
                     style={{
                       fontSize: "20px",
                       fontWeight: 500,
-                      marginBottom: "15px",
+                      marginBottom: "20px",
                       marginTop: "5px",
                     }}
                   >
-                    Zgjidh Pakon
+                    Zgjidh Ofertën
                   </p>
                   <button
                     style={{
@@ -493,6 +504,7 @@ const Article = ({ params }) => {
                       backgroundColor: "white",
                       cursor: "pointer",
                       fontSize: "18px",
+                      marginTop: "5px",
                     }}
                     onClick={handleModalClose}
                   >
@@ -520,20 +532,41 @@ const Article = ({ params }) => {
                           backgroundColor:
                             selectedPack === pack.id ? "#fafafa" : "white",
                           borderRadius: "10px",
-                          padding: "5px",
+                          padding: "10px 4px 4px 4px",
                           textAlign: "center",
                           cursor: "pointer",
+                          position: "relative",
                         }}
                         onClick={() => setSelectedPack(pack.id)}
                       >
+                        {pack.sale && (
+                          <p
+                            style={{
+                              position: "absolute",
+                              top: "-22px",
+                              left: "50%",
+                              transform: "translateX(-50%)",
+                              backgroundColor: "#69b42d",
+                              color: "white",
+                              padding: "2px 5px",
+                              borderRadius: "5px",
+                              fontSize: "0.8rem",
+                              width: "6em",
+                              fontWeight: "500",
+                            }}
+                          >
+                            {pack.sale}
+                          </p>
+                        )}
+                        <h4 style={{ fontWeight: 500, margin: "2px 0 0 0" }}>
+                          {pack.name}
+                        </h4>
                         <img
                           src={pack.image}
                           alt={pack.name}
                           style={{ width: "80px", height: "80px" }}
                         />
-                        <h3 style={{ fontWeight: 500, margin: "5px 0" }}>
-                          {pack.name}
-                        </h3>
+
                         {pack.originalPrice && (
                           <p
                             style={{
@@ -557,7 +590,14 @@ const Article = ({ params }) => {
                       </div>
                     ))}
                   </div>
-                  <p style={{ fontSize: "20px", fontWeight: 500 }}>
+
+                  <p
+                    style={{
+                      fontSize: "20px",
+                      fontWeight: 500,
+                      marginTop: "10px",
+                    }}
+                  >
                     Adresa e Dërgesës
                   </p>
                   <div style={{ marginBottom: "15px" }}>
@@ -741,12 +781,14 @@ const Article = ({ params }) => {
                   <button
                     type="submit"
                     style={{
-                      padding: "12px 20px",
-                      backgroundColor: loading ? "#a1a1a1" : "#14cf2e",
+                      padding: "15px 20px",
+                      backgroundColor: loading ? "#88c35d" : "#69b42d",
                       color: "white",
                       border: "none",
                       borderRadius: "5px",
                       marginTop: "20px",
+                      marginBottom: "20px",
+
                       width: "100%",
                       fontSize: "16px",
                     }}
